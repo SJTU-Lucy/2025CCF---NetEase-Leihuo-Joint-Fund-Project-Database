@@ -10,10 +10,69 @@ model：存放训练好的模型文件，使用时要确保正确加载。
 
 readme：即当前目录，项目文档说明，如运行指南、使用手册，使用前建议详读。
 
-同时针对课题详细情况，提醒您：​
+### 1. 环境配置
 
-1、预计5月底回收课题结果，请您提前准备，比赛结果实时评测，评测频率分为两个阶段，5月24日前，每周评测1-2次，5月24-5月底，每2天评测1次。
+首先，创建虚拟环境
 
-2、数据回收阶段，请各位老师提供Github账号，并将课题结果上传至github，我们将通过Github进行结果回收
+```bash
+# 使用conda创建环境
+conda create -n Retarget python=3.10
+conda activate Retarget
+```
 
-3、Fork后请维护私有仓库，并邀请账号【Lac-bit】 加入仓库，后续我们将拉取最新提交的结果更新榜单成绩。
+通过以下命令检查您当前的CUDA版本：
+
+```bash
+nvcc -V # example versions: 11.1, 11.8, 12.1, etc.
+```
+
+然后，安装相应版本的torch。以下是不同CUDA版本的示例。如果您的CUDA版本未列出，请访问[PyTorch官方网站](https://pytorch.org/get-started/previous-versions)获取安装命令：
+
+```bash
+# for CUDA 11.1
+pip install torch==1.10.1+cu111 torchvision==0.11.2 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+# for CUDA 11.8
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
+# for CUDA 12.1
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
+# ...
+```
+
+最后，安装其余依赖项：
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
+### 2. 运行
+
+（1） 进行换脸
+
+```python
+cd code/LivePortrait
+python inference.py
+```
+
+（2） 对换脸的结果预测MetaHuman Rig
+
+```python
+cd ..
+python test.py
+```
+
+（3） 对部分样本修正口型
+
+```python
+python pred_mouth.py
+```
+
+（4） 综合换脸的预测结果和修正口型后的结果，并在maya/UE5中渲染结果，保存在“data/render_final”中
+
+（5） 拼接原始视频和渲染的预测结果
+
+```
+python concat_videos.py
+```
+
