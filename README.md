@@ -46,7 +46,19 @@ pip install -r requirements.txt
 
 
 
-### 2. 运行
+### 2. 下载预训练模型
+
+（1）下载LivePortrait预训练模型
+
+从[Google Drive](https://drive.google.com/drive/folders/1UtKgzKjFAOmZkhNK-OYT0caJ_w2XAnib)中下载预训练模型并放于**Code/LivePortrait/pretrained_weights**文件夹中
+
+（2）下载口型预测预训练模型
+
+从[Google Drive](https://drive.google.com/file/d/1PYIfppWAIVFuO2dWQgIuLrvSMkAYYTE5/view)下载模型并放于**Code/MouthCorrect/weights**文件夹中
+
+
+
+### 3. 运行
 
 （1） 进行换脸
 
