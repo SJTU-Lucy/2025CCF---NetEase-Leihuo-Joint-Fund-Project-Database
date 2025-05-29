@@ -52,7 +52,7 @@ def predict_image(model, image_path, save_path):
 
 
 if __name__ == '__main__':
-    weight_path = "weights/50_model.pth"
+    weight_path = "../Model/50_model.pth"
     test_root = "data/retarget_test"
     save_root = "data/pred_rig"
     if not os.path.exists(save_root):

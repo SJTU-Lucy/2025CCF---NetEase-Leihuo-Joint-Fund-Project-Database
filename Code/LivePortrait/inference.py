@@ -80,6 +80,9 @@ def main():
     # video -> images
     # extract_frames_from_videos(video_dir, driving_dir)
 
+    if not os.path.exists(save_dir):
+        os.mkdir(save_dir)
+
     for name in sorted(os.listdir(driving_dir)):
         in_path = os.path.join(driving_dir, name)
         out_path = os.path.join(output_dir, name)

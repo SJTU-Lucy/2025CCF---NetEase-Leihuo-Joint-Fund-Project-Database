@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from typing import Optional, Tuple
 
 import numpy as np
@@ -10,8 +7,6 @@ from transformers import Wav2Vec2Model
 from transformers.modeling_outputs import BaseModelOutput
 
 
-# the implementation of Wav2Vec2Model is borrowed from https://huggingface.co/transformers/_modules/transformers/models/wav2vec2/modeling_wav2vec2.html#Wav2Vec2Model
-# initialize our encoder with the pre- trained wav2vec 2.0 weights.
 def _compute_mask_indices(
         shape: Tuple[int, int],
         mask_prob: float,

@@ -14,7 +14,7 @@ file_list = ['clip3', 'clip4', 'clip5', 'clip11', '半身-1', '半身-2', '成�
 
 emo_dim = 7                                 # dimension of emotions
 out_dim = 174                               # dimension of output controller value
-weight_path = "MouthCorrect/weights/1200_model.pth"      # path to saved .pth weight file
+weight_path = "../Model/1200_model.pth"     # path to saved .pth weight file
 rig_path = "data/pred_rig"
 audio_path = "data/audio"
 video_path = "data/video_test"
@@ -37,8 +37,7 @@ if not os.path.exists(out_path):
 
 class AudioDataProcessor:
     def __init__(self, sampling_rate=16000) -> None:
-        self._processor = Wav2Vec2Processor.from_pretrained("MouthCorrect/wav2vec2-base-960h",
-                                                            local_files_only=True)
+        self._processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-base-960h")
         self._sampling_rate = sampling_rate
 
     def run(self, audio):

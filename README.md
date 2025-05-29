@@ -35,7 +35,6 @@ pip install torch==1.10.1+cu111 torchvision==0.11.2 torchaudio==0.10.1 -f https:
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
 # for CUDA 12.1
 pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
-# ...
 ```
 
 最后，安装其余依赖项：
@@ -54,7 +53,7 @@ pip install -r requirements.txt
 
 （2）下载口型预测预训练模型
 
-从[Google Drive](https://drive.google.com/file/d/1PYIfppWAIVFuO2dWQgIuLrvSMkAYYTE5/view)下载模型并放于**Code/MouthCorrect/weights**文件夹中
+从[Google Drive](https://drive.google.com/file/d/1PYIfppWAIVFuO2dWQgIuLrvSMkAYYTE5/view)下载模型并放于**Model**文件夹中
 
 
 

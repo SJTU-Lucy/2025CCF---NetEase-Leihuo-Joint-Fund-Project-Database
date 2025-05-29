@@ -1,6 +1,12 @@
-Code/MouthCorrect/weights/1200_model.pth
-/Code/LivePortrait/pretrained_weights
 实验文档.docx
-/Demo
-/Code/data/video_test
-/Code/MouthCorrect/wav2vec2-base-960h
+/Code/LivePortrait/src/modules/__pycache__
+/Code/LivePortrait/src/utils/__pycache__
+/Code/LivePortrait/src/config/__pycache__
+/Code/LivePortrait/src/__pycache__
+/Code/LivePortrait/src/utils/dependencies/insightface/app/__pycache__
+/Code/LivePortrait/src/utils/dependencies/insightface/__pycache__
+/Code/LivePortrait/src/utils/dependencies/insightface/data/__pycache__
+/Code/LivePortrait/src/utils/dependencies/insightface/model_zoo/__pycache__
+/Code/LivePortrait/src/utils/dependencies/insightface/utils/__pycache__
+/Code/model/__pycache__
+/Code/MouthCorrect/__pycache__

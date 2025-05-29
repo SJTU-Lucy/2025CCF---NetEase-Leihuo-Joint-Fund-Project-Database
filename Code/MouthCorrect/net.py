@@ -50,11 +50,9 @@ class EncoderTransformer(nn.Module):
             nn.Linear(512, d_model)
         )
 
-        self.audio_encoder_config = Wav2Vec2Config.from_pretrained("MouthCorrect/wav2vec2-base-960h",
-                                                                   local_files_only=True)
+        self.audio_encoder_config = Wav2Vec2Config.from_pretrained("facebook/wav2vec2-base-960h")
 
-        self.audio_encoder = Wav2Vec2Model.from_pretrained("MouthCorrect/wav2vec2-base-960h",
-                                                                   local_files_only=True)
+        self.audio_encoder = Wav2Vec2Model.from_pretrained("facebook/wav2vec2-base-960h")
         self.audio_encoder.feature_extractor._freeze_parameters()
 
         encoder_layer = nn.TransformerEncoderLayer(d_model=d_model, nhead=nhead)
